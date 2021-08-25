@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7C975023-81C8-4035-A839-643BBF8DBAB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{A2AA1710-2513-46D5-9C41-833616712094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODBUS", "MODBUS\MODBUS.csproj", "{76D2A422-429C-44BA-A4E6-828DA60B543B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C975023-81C8-4035-A839-643BBF8DBAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C975023-81C8-4035-A839-643BBF8DBAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C975023-81C8-4035-A839-643BBF8DBAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C975023-81C8-4035-A839-643BBF8DBAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2AA1710-2513-46D5-9C41-833616712094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2AA1710-2513-46D5-9C41-833616712094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2AA1710-2513-46D5-9C41-833616712094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2AA1710-2513-46D5-9C41-833616712094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D2A422-429C-44BA-A4E6-828DA60B543B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D2A422-429C-44BA-A4E6-828DA60B543B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D2A422-429C-44BA-A4E6-828DA60B543B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D2A422-429C-44BA-A4E6-828DA60B543B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

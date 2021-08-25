@@ -1,0 +1,7 @@
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\bin\Debug\Core.dll.config
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\bin\Debug\Core.dll
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\bin\Debug\Core.pdb
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\obj\Debug\Core.csprojAssemblyReference.cache
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\obj\Debug\Core.dll
+E:\school\iwsk\lab1\IWSK-master\RS-232\Core\obj\Debug\Core.pdb
