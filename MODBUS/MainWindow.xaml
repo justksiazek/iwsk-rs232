@@ -1,8 +1,8 @@
-﻿<Window x:Class="MODBUS.MainWindow"
+﻿<Window x:Class="Task2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:dictionaries="clr-namespace:UI;assembly=UI"
-        xmlns:converters="clr-namespace:UI.Converters;assembly=UI"
+        xmlns:dictionaries="clr-namespace:Task1;assembly=UI"
+        xmlns:converters="clr-namespace:Task1.Converters;assembly=UI"
         Title="{Binding Title}" Height="690" Width="710">
     <Window.Resources>
         <converters:BoolToStringConverter x:Key="BoolToStringConverter" />

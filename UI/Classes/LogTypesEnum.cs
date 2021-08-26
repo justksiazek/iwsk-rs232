@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-
-namespace UI.Classes
+﻿namespace Task1.Classes
 {
-    public enum LogTypesEnum
-    {
+    public enum LogTypesEnum {
         Error = 0,
         Information,
         SendingText,

@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace MODBUS
+namespace Task2
 {
     /// <summary>
     /// Interaction logic for App.xaml

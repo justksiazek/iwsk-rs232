@@ -5,14 +5,11 @@ using System.Text;
 
 using System.Windows.Data;
 
-namespace UI.Converters
+namespace Task1.Converters
 {
-    public class LogTypedToBackgroundColorConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            switch((UI.Classes.LogTypesEnum)value)
-            {
+    public class LogTypedToBackgroundColorConverter : IValueConverter {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+            switch((Task1.Classes.LogTypesEnum)value) {
                 case Classes.LogTypesEnum.Error:
                     return System.Windows.Media.Brushes.Red;
                 case Classes.LogTypesEnum.Information:
@@ -27,17 +24,12 @@ namespace UI.Converters
                     return System.Windows.Media.Brushes.Violet;
                 case Classes.LogTypesEnum.Buffer:
                     return System.Windows.Media.Brushes.Cyan;
-                case Classes.LogTypesEnum.Other:
-
                 default:
                     return System.Windows.Media.Brushes.Black;
-
             }
-
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
             throw new NotImplementedException();
         }
     }
