@@ -2,7 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dictionaries="clr-namespace:Task1;assembly=UI"
+        xmlns:classes="clr-namespace:Task1.Classes"
         xmlns:converters="clr-namespace:Task1.Converters;assembly=UI"
+        xmlns:controls="clr-namespace:Task1.Controls;assembly=UI"
         Title="{Binding Title}" Height="690" Width="710">
     <Window.Resources>
         <converters:BoolToStringConverter x:Key="BoolToStringConverter" />
@@ -39,34 +41,37 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" >
-            <GroupBox Header="Odbiór" Height="390" Margin="5,0,5,0"></GroupBox>
 
-            <GroupBox Header="Nadawanie" Height="250" Margin="5,0,5,0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="70" />
-                    </Grid.RowDefinitions>
-                    <TextBox Grid.Row="0" TextWrapping="Wrap" Text="{Binding TextInput}" />
-                    <Grid Grid.Row="1">
-                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                            <StackPanel Orientation="Vertical">
-                                <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M-R1] Transakcja rozgłoszeniowa" Command="{Binding WriteAll}" />
-                                <Button Height="30" Margin="0,0,5,0" Content="[M-R1] Transakcja adresowana" Command="{Binding WriteTransact}" />
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M-R2] Odczytaj wiadomość" Command="{Binding RetriveFrom}" />
-                                <StackPanel Orientation="Horizontal">
-                                    <Label VerticalContentAlignment="Center" Content="Adres stacji Slave" />
-                                    <TextBox Width="110" Height="25" Margin="0,0,5,5" VerticalContentAlignment="Center" Text="{Binding SlaveToSend}" />
-                                </StackPanel>
+        <GroupBox Header="Odbiór" Height="342.5" Margin="5,10,5,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
+            <controls:AutoScrollingListView ItemsSource="{Binding LogItems}"
+                                            ItemContainerStyle="{DynamicResource LogItemTemplate}" Height="314" VerticalAlignment="Top"/>
+        </GroupBox>
+
+        <GroupBox Header="Nadawanie" Height="291.5" Margin="5,0,5,10" Grid.Column="0" VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="0" TextWrapping="Wrap" Text="{Binding TextInput}" />
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M-R1] Transakcja rozgłoszeniowa" Command="{Binding WriteAll}" />
+                            <Button Height="30" Margin="0,0,5,0" Content="[M-R1] Transakcja adresowana" Command="{Binding WriteTransact}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M-R2] Odczytaj wiadomość" Command="{Binding RetriveFrom}" />
+                            <StackPanel Orientation="Horizontal">
+                                <Label VerticalContentAlignment="Center" Content="Adres stacji Slave" />
+                                <TextBox Width="110" Height="25" Margin="0,0,5,5" VerticalContentAlignment="Center" Text="{Binding SlaveToSend}" />
                             </StackPanel>
                         </StackPanel>
-                    </Grid>
+                    </StackPanel>
                 </Grid>
-            </GroupBox>
-        </StackPanel>
+            </Grid>
+        </GroupBox>
+
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />

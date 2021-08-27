@@ -1,0 +1,7 @@
+D:\GitHub\iwsk-rs232\Core\bin\Release\Core.dll.config
+D:\GitHub\iwsk-rs232\Core\bin\Release\Core.dll
+D:\GitHub\iwsk-rs232\Core\bin\Release\Core.pdb
+D:\GitHub\iwsk-rs232\Core\obj\Release\Core.csproj.AssemblyReference.cache
+D:\GitHub\iwsk-rs232\Core\obj\Release\Core.csproj.CoreCompileInputs.cache
+D:\GitHub\iwsk-rs232\Core\obj\Release\Core.dll
+D:\GitHub\iwsk-rs232\Core\obj\Release\Core.pdb

@@ -1,8 +1,10 @@
 ﻿<Window x:Class="Task1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:dictionaries="clr-namespace:Task1"
+xmlns:dictionaries="clr-namespace:Task1"
+        xmlns:classes="clr-namespace:Task1.Classes"
         xmlns:converters="clr-namespace:Task1.Converters"
+        xmlns:controls="clr-namespace:Task1.Controls"
         Title="{Binding Title}" Height="600" Width="600">
     <Window.Resources>
         <converters:BoolToStringConverter x:Key="BoolToStringConverter" />
@@ -39,44 +41,47 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" >
-            <GroupBox Header="Odbiór" Height="365" Margin="5,0,5,0"></GroupBox>
 
-            <GroupBox Header="Nadawanie" Height="200" Margin="5,0,5,0">
-                <TabControl>
-                    <TabItem Header="Transmisja tekstowa">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="50" />
-                            </Grid.RowDefinitions>
-                            <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="{Binding TextInput}"></TextBox>
-                            <Button Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Content="Wyślij" Command="{Binding WriteMsg}" />
-                            <Button Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" Content="Wyślij jako transakcję" Command="{Binding WriteTransact}" />
-                        </Grid>
-                    </TabItem>
+        <GroupBox Header="Odbiór" Height="344" Margin="5,10,5,0" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
+            <controls:AutoScrollingListView ItemsSource="{Binding LogItems}"
+                                            ItemContainerStyle="{DynamicResource LogItemTemplate}" Height="314" VerticalAlignment="Top"/>
+        </GroupBox>
 
-                    <TabItem Header="Transmisja binarna">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="11*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="50" />
-                            </Grid.RowDefinitions>
-                            <TextBox Grid.Row="0" TextWrapping="Wrap" Text="{Binding HexInput}" Grid.ColumnSpan="2" />
-                            <Button Grid.Row="1" Content="Wyślij" Margin="5,5,5,5" Command="{Binding WriteHex}" Grid.ColumnSpan="2" />
-                        </Grid>
-                    </TabItem>
-                </TabControl>
-            </GroupBox>
-        </StackPanel>
+        <GroupBox Header="Nadawanie" Height="200" Margin="5,0,5,10" Grid.Column="0" VerticalAlignment="Bottom">
+            <TabControl>
+                <TabItem Header="Transmisja tekstowa">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="{Binding TextInput}"></TextBox>
+                        <Button Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" Content="Wyślij" Command="{Binding WriteMsg}" />
+                        <Button Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" Content="Wyślij jako transakcję" Command="{Binding WriteTransact}" />
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Transmisja binarna">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="11*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0" TextWrapping="Wrap" Text="{Binding HexInput}" Grid.ColumnSpan="2" />
+                        <Button Grid.Row="1" Content="Wyślij" Margin="5,5,5,5" Command="{Binding WriteHex}" Grid.ColumnSpan="2" />
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </GroupBox>
+
 
         <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
             <Grid.RowDefinitions>
@@ -85,8 +90,8 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            
-            <Grid Grid.Row="0">      
+
+            <Grid Grid.Row="0">
                 <GroupBox Header="Konfiguracja portu">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -140,12 +145,12 @@
                                   ItemsSource="{Binding Source={x:Static dictionaries:SerialPortDictionaries.HandshakeDictionary}}"
                                   SelectedValue="{Binding Port.Handshake}"
                                   DisplayMemberPath="Value" SelectedValuePath="Key" />
-                        <Label Grid.Column="0" Grid.Row="6" Content="Terminator" />
+                        <!--<Label Grid.Column="0" Grid.Row="6" Content="Terminator" />
                         <ComboBox Grid.Column="1" Grid.Row="6" Margin="5,2,5,2"
                                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                   ItemsSource="{Binding Source={x:Static dictionaries:SerialPortDictionaries.TerminatorDictionary}}"
                                   SelectedValue="{Binding Port.StopCharacters}"
-                                  DisplayMemberPath="Value" SelectedValuePath="Key" />
+                                  DisplayMemberPath="Value" SelectedValuePath="Key" />-->
                         <!--<Label Grid.Column="0" Grid.Row="6" Content="ReadTimeout" />
                         <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Port.ReadTimeout}" Margin="5,2,5,2"></TextBox>
                         <Label Grid.Column="0" Grid.Row="7" Content="WriteTimeout" />
@@ -167,7 +172,7 @@
                 </GroupBox>
             </Grid>
 
-           <!-- <Grid Grid.Row="2">
+            <!-- <Grid Grid.Row="2">
                 <GroupBox Grid.Row="0" Header="Ręczne sterowanie przepływem">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -201,7 +206,7 @@
                 </GroupBox>
             </Grid> -->
 
-           <!-- <Grid Grid.Row="3"> -->
+            <!-- <Grid Grid.Row="3"> -->
             <Grid Grid.Row="2">
                 <GroupBox Grid.Row="1" Header="Inne ">
                     <StackPanel Orientation="Vertical">
