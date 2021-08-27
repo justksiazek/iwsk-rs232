@@ -12,3 +12,10 @@ E:\git\iwsk-rs232\Core\obj\Debug\Core.csprojAssemblyReference.cache
 E:\git\iwsk-rs232\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 E:\git\iwsk-rs232\Core\obj\Debug\Core.dll
 E:\git\iwsk-rs232\Core\obj\Debug\Core.pdb
+D:\GitHub\iwsk-rs232\Core\bin\Debug\Core.dll.config
+D:\GitHub\iwsk-rs232\Core\bin\Debug\Core.dll
+D:\GitHub\iwsk-rs232\Core\bin\Debug\Core.pdb
+D:\GitHub\iwsk-rs232\Core\obj\Debug\Core.csproj.AssemblyReference.cache
+D:\GitHub\iwsk-rs232\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\GitHub\iwsk-rs232\Core\obj\Debug\Core.dll
+D:\GitHub\iwsk-rs232\Core\obj\Debug\Core.pdb
