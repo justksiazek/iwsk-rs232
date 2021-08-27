@@ -52,11 +52,11 @@
                     <Grid Grid.Row="1">
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <StackPanel Orientation="Vertical">
-                                <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M] Transakcja rozgłoszeniowa" Command="{Binding WriteAll}" />
-                                <Button Height="30" Margin="0,0,5,0" Content="[M] Transakcja adresowana" Command="{Binding WriteTransact}" />
+                                <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M-R1] Transakcja rozgłoszeniowa" Command="{Binding WriteAll}" />
+                                <Button Height="30" Margin="0,0,5,0" Content="[M-R1] Transakcja adresowana" Command="{Binding WriteTransact}" />
                             </StackPanel>
                             <StackPanel Orientation="Vertical">
-                                <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M] Odczytaj wiadomość" Command="{Binding RetriveFrom}" />
+                                <Button Width="211" Height="30" Margin="0,0,5,5" Content="[M-R2] Odczytaj wiadomość" Command="{Binding RetriveFrom}" />
                                 <StackPanel Orientation="Horizontal">
                                     <Label VerticalContentAlignment="Center" Content="Adres stacji Slave" />
                                     <TextBox Width="110" Height="25" Margin="0,0,5,5" VerticalContentAlignment="Center" Text="{Binding SlaveToSend}" />

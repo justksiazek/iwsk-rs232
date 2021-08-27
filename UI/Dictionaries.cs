@@ -60,6 +60,15 @@ namespace Task1
             //DTR można włączyć za pomocą public bool DtrEnable { get; set; } z System.IO.Ports, albo SerialPortWrapper.DTR
             {Handshake.XOnXOff, "XON/XOFF"}
         };
+
+        public static Dictionary<string, string> TerminatorDictionary { get { return _terminatorDictionary; } }
+
+        private static Dictionary<string, string> _terminatorDictionary = new Dictionary<string, string>() {
+            {"\r", "CR"},
+            {"\n", "LF"},
+            {"\r\n", "CR-LF"},
+            {"", "własny"}
+        };
         public static Dictionary<Handshake, string> HandshakeDictionary { get { return _handshakeDictionary; } }
     }
 }
