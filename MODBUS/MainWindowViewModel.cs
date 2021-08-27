@@ -194,6 +194,7 @@ namespace Task2
         }
 
         byte[] tmp = new byte[] { 24 };
+        string wklejText;
         private void Port_DataReceived(string msg, bool isBuffer) {
             if(isBuffer)
                 App.Current.Dispatcher.Invoke(new Action(() => this.LogItems.Add(new LogItemTemplate(LogTypesEnum.Buffer, string.Format("\"{0}\"", msg)))));
@@ -217,11 +218,12 @@ namespace Task2
                         App.Current.Dispatcher.Invoke(new Action(() => this.LogItems.Add(new LogItemTemplate(LogTypesEnum.SendingHex, string.Format("\"{0}\"", srttmp)))));
                     }
                     else if(frame.FunctionCode == 2) {
+                        this.Port.ModbusWrite(new Core.ModubusASCIIFrame(0, 0, TextInput).GetFrame());
                         var srttmp = string.Empty;
                         new Core.ModubusASCIIFrame(0, 0, Encoding.ASCII.GetString(tmp)).GetFrame().ToList().ForEach(x => srttmp += x.ToString() + ";");
                         App.Current.Dispatcher.Invoke(new Action(() => this.LogItems.Add(new LogItemTemplate(LogTypesEnum.SendingHex, string.Format("\"{0}\"", srttmp)))));
 
-                        this.Port.ModbusWrite(new Core.ModubusASCIIFrame(0, 0, Encoding.ASCII.GetString(tmp)).GetFrame());
+                        
                     }
                 }
                 else

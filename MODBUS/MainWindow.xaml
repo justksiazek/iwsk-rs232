@@ -53,7 +53,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="70" />
                 </Grid.RowDefinitions>
-                <TextBox Grid.Row="0" TextWrapping="Wrap" Text="{Binding TextInput}" />
+                <TextBox Grid.Row="0" TextWrapping="Wrap" Text="{Binding TextInput, UpdateSourceTrigger=PropertyChanged}" />
                 <Grid Grid.Row="1">
                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                         <StackPanel Orientation="Vertical">
